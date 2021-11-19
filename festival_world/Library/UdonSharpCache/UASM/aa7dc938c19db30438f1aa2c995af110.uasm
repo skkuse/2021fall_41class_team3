@@ -1,0 +1,151 @@
+.data_start
+
+    .export daysky
+    .export nightsky
+    .export skymode
+    .export day_particle
+    .export night_particle
+    .export firework
+    .export firework2
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    night_particle: %UnityEngineGameObject, null
+    day_particle: %UnityEngineGameObject, null
+    skymode: %UnityEngineGameObject, null
+    nightsky: %UnityEngineMaterial, null
+    daysky: %UnityEngineMaterial, null
+    firework2: %UnityEngineParticleSystem, null
+    firework: %UnityEngineParticleSystem, null
+    skymodeActive: %SystemBoolean, null
+    __1_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_intnl_SystemBoolean: %SystemBoolean, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+
+.data_end
+
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using UnityEngine.UI;
+        
+         #  using VRC.SDKBase;
+        
+         #  using VRC.Udon;
+        
+         #  using System.Collections;
+        
+         #  using System.Collections.Generic;
+        
+         #  namespace changesky
+        
+         #  public class ChangeSkyScript : UdonSharpBehaviour
+.code_start
+        
+         #  public Material daysky;
+        
+         #  public Material nightsky;
+        
+         #  public GameObject skymode;
+        
+         #  private bool skymodeActive;
+        
+         #  public GameObject day_particle;
+        
+         #  public GameObject night_particle;
+        
+         #  public ParticleSystem firework;
+        
+         #  public ParticleSystem firework2;
+        
+         #  public override void Interact()
+    .export _interact
+        
+    _interact:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  skymodeActive = skymode.activeSelf;
+        PUSH, skymode
+        PUSH, skymodeActive
+        EXTERN, "UnityEngineGameObject.__get_activeSelf__SystemBoolean"
+        
+         #  if (skymodeActive == true)
+        PUSH, skymodeActive
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_Equality__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x000000D0
+        
+         #  {
+        
+         #  RenderSettings.skybox = nightsky;
+        PUSH, nightsky
+        EXTERN, "UnityEngineRenderSettings.__set_skybox__UnityEngineMaterial__SystemVoid"
+        
+         #  skymode.SetActive(false);
+        PUSH, skymode
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  day_particle.SetActive(false);
+        PUSH, day_particle
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  night_particle.SetActive(true);
+        PUSH, night_particle
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  firework.Play();
+        PUSH, firework
+        EXTERN, "UnityEngineParticleSystem.__Play__SystemVoid"
+        
+         #  firework2.Play();
+        PUSH, firework2
+        EXTERN, "UnityEngineParticleSystem.__Play__SystemVoid"
+        JUMP, 0x00000148
+        
+         #  else
+        
+         #  {
+        
+         #  RenderSettings.skybox = daysky;
+        PUSH, daysky
+        EXTERN, "UnityEngineRenderSettings.__set_skybox__UnityEngineMaterial__SystemVoid"
+        
+         #  skymode.SetActive(true);
+        PUSH, skymode
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  night_particle.SetActive(false);
+        PUSH, night_particle
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  firework.Stop();
+        PUSH, firework
+        EXTERN, "UnityEngineParticleSystem.__Stop__SystemVoid"
+        
+         #  firework2.Stop();
+        PUSH, firework2
+        EXTERN, "UnityEngineParticleSystem.__Stop__SystemVoid"
+        
+         #  day_particle.SetActive(true);
+        PUSH, day_particle
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end
