@@ -131,13 +131,13 @@ MonoBehaviour:
     updateOrder: 0
   graphElementData:
   - type: 5
-    uid: 4468d857-f2f6-46cb-9ce4-4c27e47e1d2d
+    uid: e35dcffc-8ebc-495e-b70e-99a7587314d8
     jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":0.0,"y":15.0,"width":309.0,"height":188.0}}'
   - type: 4
     uid: 19fb5b89-f435-4b59-b10f-712f3a0e4dab
     jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":3.0,"y":2.0,"width":200.0,"height":100.0}}'
   viewTransform:
-    position: {x: 58, y: -66.666664}
+    position: {x: 28.666666, y: -147.33333}
     scale: 0.7561437
   version: 1.0.0
   showAssembly: 0

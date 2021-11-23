@@ -1,5 +1,8 @@
 .data_start
 
+    .export day_clips
+    .export night_clips
+    .export audioSource
     .export daysky
     .export nightsky
     .export skymode
@@ -7,9 +10,13 @@
     .export night_particle
     .export firework
     .export firework2
+    .export timer
 
     __refl_const_intnl_udonTypeID: %SystemInt64, null
     __refl_const_intnl_udonTypeName: %SystemString, null
+    night_clips: %UnityEngineAudioClipArray, null
+    day_clips: %UnityEngineAudioClipArray, null
+    audioSource: %UnityEngineAudioSource, null
     night_particle: %UnityEngineGameObject, null
     day_particle: %UnityEngineGameObject, null
     skymode: %UnityEngineGameObject, null
@@ -17,11 +24,29 @@
     daysky: %UnityEngineMaterial, null
     firework2: %UnityEngineParticleSystem, null
     firework: %UnityEngineParticleSystem, null
+    timer: %SystemSingle, null
+    _isActive: %SystemBoolean, null
     skymodeActive: %SystemBoolean, null
+    _timerCount: %SystemSingle, null
     __1_const_intnl_SystemBoolean: %SystemBoolean, null
     __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemInt32: %SystemInt32, null
+    __3_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __2_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __1_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
+    __0_const_intnl_exitJumpLoc_UInt32: %SystemUInt32, null
     __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __1_intnl_returnValSymbol_AudioClip: %UnityEngineAudioClip, null
+    __0_intnl_returnValSymbol_AudioClip: %UnityEngineAudioClip, null
+    __2_intnl_SystemBoolean: %SystemBoolean, null
+    __1_intnl_SystemBoolean: %SystemBoolean, null
     __0_intnl_SystemBoolean: %SystemBoolean, null
+    __3_intnl_SystemInt32: %SystemInt32, null
+    __2_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemInt32: %SystemInt32, null
+    __0_intnl_SystemInt32: %SystemInt32, null
+    __1_intnl_SystemSingle: %SystemSingle, null
+    __0_intnl_SystemSingle: %SystemSingle, null
     __0_intnl_returnTarget_UInt32: %SystemUInt32, null
 
 .data_end
@@ -46,6 +71,12 @@
          #  public class ChangeSkyScript : UdonSharpBehaviour
 .code_start
         
+         #  public AudioClip[] day_clips;
+        
+         #  public AudioClip[] night_clips;
+        
+         #  public AudioSource audioSource;
+        
          #  public Material daysky;
         
          #  public Material nightsky;
@@ -62,12 +93,86 @@
         
          #  public ParticleSystem firework2;
         
-         #  public override void Interact()
-    .export _interact
+         #  private bool _isActive;
         
-    _interact:
+         #  private float _timerCount;
+        
+         #  public float timer = 5;
+        
+         #  private AudioClip day_GetRandomClip()
+    day_GetRandomClip:
         
         PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  return day_clips[Random.Range(0, day_clips.Length)];
+        PUSH, day_clips
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioClipArray.__get_Length__SystemInt32"
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __1_intnl_SystemInt32
+        EXTERN, "UnityEngineRandom.__Range__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, day_clips
+        PUSH, __1_intnl_SystemInt32
+        PUSH, __0_intnl_returnValSymbol_AudioClip
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private AudioClip night_GetRandomClip()
+    night_GetRandomClip:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  return night_clips[Random.Range(0, night_clips.Length)];
+        PUSH, night_clips
+        PUSH, __2_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioClipArray.__get_Length__SystemInt32"
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __2_intnl_SystemInt32
+        PUSH, __3_intnl_SystemInt32
+        EXTERN, "UnityEngineRandom.__Range__SystemInt32_SystemInt32__SystemInt32"
+        PUSH, night_clips
+        PUSH, __3_intnl_SystemInt32
+        PUSH, __1_intnl_returnValSymbol_AudioClip
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        PUSH, __0_intnl_returnTarget_UInt32 # Explicit return sequence
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void Update()
+    .export _update
+        
+    _update:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (_isActive) {
+        PUSH, _isActive
+        JUMP_IF_FALSE, 0x00000380
+        
+         #  if (_timerCount >= timer)
+        PUSH, _timerCount
+        PUSH, timer
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x0000033C
         
          #  {
         
@@ -79,10 +184,10 @@
          #  if (skymodeActive == true)
         PUSH, skymodeActive
         PUSH, __0_const_intnl_SystemBoolean
-        PUSH, __0_intnl_SystemBoolean
+        PUSH, __1_intnl_SystemBoolean
         EXTERN, "SystemBoolean.__op_Equality__SystemBoolean_SystemBoolean__SystemBoolean"
-        PUSH, __0_intnl_SystemBoolean
-        JUMP_IF_FALSE, 0x000000D0
+        PUSH, __1_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000258
         
          #  {
         
@@ -112,7 +217,18 @@
          #  firework2.Play();
         PUSH, firework2
         EXTERN, "UnityEngineParticleSystem.__Play__SystemVoid"
-        JUMP, 0x00000148
+        
+         #  audioSource.clip = night_GetRandomClip();
+        PUSH, __0_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000090
+        PUSH, audioSource
+        PUSH, __1_intnl_returnValSymbol_AudioClip
+        EXTERN, "UnityEngineAudioSource.__set_clip__UnityEngineAudioClip__SystemVoid"
+        
+         #  audioSource.Play();
+        PUSH, audioSource
+        EXTERN, "UnityEngineAudioSource.__Play__SystemVoid"
+        JUMP, 0x00000308
         
          #  else
         
@@ -144,6 +260,109 @@
         PUSH, day_particle
         PUSH, __0_const_intnl_SystemBoolean
         EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  audioSource.clip = day_GetRandomClip();
+        PUSH, __1_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        PUSH, audioSource
+        PUSH, __0_intnl_returnValSymbol_AudioClip
+        EXTERN, "UnityEngineAudioSource.__set_clip__UnityEngineAudioClip__SystemVoid"
+        
+         #  audioSource.Play();
+        PUSH, audioSource
+        EXTERN, "UnityEngineAudioSource.__Play__SystemVoid"
+        
+         #  _timerCount = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, _timerCount
+        EXTERN, "SystemConvert.__ToSingle__SystemInt32__SystemSingle"
+        
+         #  _isActive = false;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, _isActive
+        COPY
+        JUMP, 0x00000380
+        
+         #  else {
+        
+         #  _timerCount += Time.deltaTime;
+        PUSH, __0_intnl_SystemSingle
+        EXTERN, "UnityEngineTime.__get_deltaTime__SystemSingle"
+        PUSH, _timerCount
+        PUSH, __0_intnl_SystemSingle
+        PUSH, __1_intnl_SystemSingle
+        EXTERN, "SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle"
+        PUSH, __1_intnl_SystemSingle
+        PUSH, _timerCount
+        COPY
+        
+         #  skymodeActive = skymode.activeSelf;
+        PUSH, skymode
+        PUSH, skymodeActive
+        EXTERN, "UnityEngineGameObject.__get_activeSelf__SystemBoolean"
+        
+         #  if (!audioSource.isPlaying) {
+        PUSH, audioSource
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "UnityEngineAudioSource.__get_isPlaying__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        PUSH, __1_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
+        PUSH, __1_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000480
+        
+         #  if (skymodeActive == true)
+        PUSH, skymodeActive
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "SystemBoolean.__op_Equality__SystemBoolean_SystemBoolean__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000448
+        
+         #  {
+        
+         #  audioSource.clip = day_GetRandomClip();
+        PUSH, __2_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000008
+        PUSH, audioSource
+        PUSH, __0_intnl_returnValSymbol_AudioClip
+        EXTERN, "UnityEngineAudioSource.__set_clip__UnityEngineAudioClip__SystemVoid"
+        
+         #  audioSource.Play();
+        PUSH, audioSource
+        EXTERN, "UnityEngineAudioSource.__Play__SystemVoid"
+        JUMP, 0x00000480
+        
+         #  else {
+        
+         #  audioSource.clip = night_GetRandomClip();
+        PUSH, __3_const_intnl_exitJumpLoc_UInt32
+        JUMP, 0x00000090
+        PUSH, audioSource
+        PUSH, __1_intnl_returnValSymbol_AudioClip
+        EXTERN, "UnityEngineAudioSource.__set_clip__UnityEngineAudioClip__SystemVoid"
+        
+         #  audioSource.Play();
+        PUSH, audioSource
+        EXTERN, "UnityEngineAudioSource.__Play__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public override void Interact()
+    .export _interact
+        
+    _interact:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  _isActive = true;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, _isActive
+        COPY
         PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
         COPY
         JUMP_INDIRECT, __0_intnl_returnTarget_UInt32

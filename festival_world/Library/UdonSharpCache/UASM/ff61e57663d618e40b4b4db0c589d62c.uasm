@@ -1,0 +1,56 @@
+.data_start
+
+    .export audioClip
+    .export audioSource
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    audioClip: %UnityEngineAudioClip, null
+    audioSource: %UnityEngineAudioSource, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+
+.data_end
+
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using VRC.SDKBase;
+        
+         #  using VRC.Udon;
+        
+         #  public class selectMusic : UdonSharpBehaviour
+.code_start
+        
+         #  public AudioClip audioClip;
+        
+         #  public AudioSource audioSource;
+        
+         #  public override void Interact()
+    .export _interact
+        
+    _interact:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  audioSource.Stop();
+        PUSH, audioSource
+        EXTERN, "UnityEngineAudioSource.__Stop__SystemVoid"
+        
+         #  audioSource.clip = audioClip;
+        PUSH, audioSource
+        PUSH, audioClip
+        EXTERN, "UnityEngineAudioSource.__set_clip__UnityEngineAudioClip__SystemVoid"
+        
+         #  audioSource.Play();
+        PUSH, audioSource
+        EXTERN, "UnityEngineAudioSource.__Play__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end
