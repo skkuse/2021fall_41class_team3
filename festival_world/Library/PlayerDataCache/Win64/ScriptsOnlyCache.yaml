@@ -1,0 +1,111 @@
+ScriptsOnlyBuild:
+  usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - VRCSdkControlPanel
+    Assembly-CSharp.dll:
+    - VRC.SDKBase.Validation.Performance.Stats.AvatarPerformanceStatsLevel
+    - VRC.SDKBase.Validation.Performance.Stats.AvatarPerformanceStatsLevelSet
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
+    - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    VRC.Udon.Editor.dll:
+    - VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UI.GraphView.UdonGraphWindow
+    - VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UdonGraphProgramAsset
+    VRC.Udon.dll:
+    - VRC.Udon.ProgramSources.SerializedUdonProgramAsset
+    - VRC.Udon.UdonBehaviour
+    VRCCore-Editor.dll:
+    - BestHTTP.HTTPUpdateDelegator
+    - VRC.Core.PipelineManager
+    - VRC.Core.UpdateDelegator
+    - VRCProjectSettings
+    VRCSDK3.dll:
+    - VRC.SDK3.Components.VRCSceneDescriptor
+  sceneClasses:
+    Assets/main_scene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12548}
+    - Class: 114
+      Script: {instanceID: 12646}
+    - Class: 114
+      Script: {instanceID: 13262}
+    - Class: 114
+      Script: {instanceID: 15496}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 154
+      Script: {instanceID: 0}
+    - Class: 156
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 218
+      Script: {instanceID: 0}
+    - Class: 1953259897
+      Script: {instanceID: 0}
+  scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: bad0f5a58d4b55ed1442379677ba2587
+    assemblyName: VRC.Udon.dll
+    namespaceName: VRC.Udon.ProgramSources
+    className: SerializedUdonProgramAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 7329407fdb21bb0f54a07aa1c00d4b95
+    assemblyName: VRCSDK3.dll
+    namespaceName: VRC.SDK3.Components
+    className: VRCSceneDescriptor
+  - hash:
+      serializedVersion: 2
+      Hash: 55caa267dabff880fc180f037fbb0fd0
+    assemblyName: VRC.Udon.dll
+    namespaceName: VRC.Udon
+    className: UdonBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 5db75d920ffb77b623077e95eb9ecdb8
+    assemblyName: VRCCore-Editor.dll
+    namespaceName: VRC.Core
+    className: PipelineManager
+  platform: 19
+  scenePathNames:
+  - Assets/main_scene.unity
+  playerPath: C:/Users/Civil/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw
