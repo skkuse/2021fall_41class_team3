@@ -13,9 +13,12 @@ public class AdminSystem : UdonSharpBehaviour
     [SerializeField]
     private GameObject systemControlCV;
 
+    [SerializeField]
+    private GameObject postCV;
+
     private InputField pwdInput;
     private Text adminCheckText;
-    private string adminPwd = "admin1234";
+    private string adminPwd = "1234";
 
     void Start()
     {
@@ -34,6 +37,17 @@ public class AdminSystem : UdonSharpBehaviour
     public void TurnOffAdminCheckCV()
     {
         adminCheckCV.SetActive(false);
+    }
+
+    public void TurnOfsystemControlCV()
+    {
+        systemControlCV.SetActive(false);
+    }
+
+    public void DestroyPost()
+    {
+        Destroy(postCV);
+        Destroy(this);
     }
 
     public void ValidateAdminPwd()

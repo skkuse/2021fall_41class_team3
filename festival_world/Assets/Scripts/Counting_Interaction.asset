@@ -128,7 +128,7 @@ MonoBehaviour:
       nodeValues: []
     - fullName: UnityEngineUIButton.__OnPointerClick__UnityEngineEventSystemsPointerEventData__SystemVoid
       uid: 35365aea-18bd-4838-b43c-2aaa69903c81
-      position: {x: 174.89497, y: -212.6325}
+      position: {x: 298, y: -236}
       nodeUIDs:
       - 
       - 
@@ -141,7 +141,7 @@ MonoBehaviour:
     updateOrder: 0
   graphElementData: []
   viewTransform:
-    position: {x: 118, y: 375}
-    scale: 1
+    position: {x: 81, y: 347}
+    scale: 0.8695652
   version: 1.0.0
   showAssembly: 0
