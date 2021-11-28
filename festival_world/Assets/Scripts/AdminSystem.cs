@@ -13,9 +13,12 @@ public class AdminSystem : UdonSharpBehaviour
     [SerializeField]
     private GameObject systemControlCV;
 
+    [SerializeField]
+    private GameObject postCV;
+
     private InputField pwdInput;
     private Text adminCheckText;
-    private string adminPwd = "admin1234";
+    private string adminPwd = "1234";
 
     void Start()
     {
@@ -36,6 +39,11 @@ public class AdminSystem : UdonSharpBehaviour
         adminCheckCV.SetActive(false);
     }
 
+    public void TurnOfsystemControlCV()
+    {
+        systemControlCV.SetActive(false);
+    }
+
     public void ValidateAdminPwd()
     {
         if (adminPwd.Equals(pwdInput.text))
@@ -48,4 +56,12 @@ public class AdminSystem : UdonSharpBehaviour
             adminCheckText.text = "Wrong password! Retry!";
         }
     }
+
+    // for notice board -> udon graph ?
+    public void DestroyPost()
+    {
+        Destroy(postCV);
+        Destroy(this);
+    }
+
 }
