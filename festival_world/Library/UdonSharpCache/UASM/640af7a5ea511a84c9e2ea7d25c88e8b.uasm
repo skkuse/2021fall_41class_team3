@@ -2,14 +2,17 @@
 
     .export adminCheckCV
     .export systemControlCV
+    .export postCV
 
     __refl_const_intnl_udonTypeID: %SystemInt64, null
     __refl_const_intnl_udonTypeName: %SystemString, null
+    postCV: %UnityEngineGameObject, null
     systemControlCV: %UnityEngineGameObject, null
     adminCheckCV: %UnityEngineGameObject, null
     pwdInput: %UnityEngineUIInputField, null
     adminPwd: %SystemString, null
     adminCheckText: %UnityEngineUIText, null
+    __0_this_intnl_AdminSystem: %VRCUdonUdonBehaviour, this
     __1_const_intnl_SystemBoolean: %SystemBoolean, null
     __0_const_intnl_SystemBoolean: %SystemBoolean, null
     __2_const_intnl_SystemString: %SystemString, null
@@ -45,11 +48,13 @@
         
          #  [SerializeField]
         
+         #  [SerializeField]
+        
          #  private InputField pwdInput;
         
          #  private Text adminCheckText;
         
-         #  private string adminPwd = "admin1234";
+         #  private string adminPwd = "1234";
         
          #  void Start()
     .export _start
@@ -135,6 +140,24 @@
         JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
         
         
+         #  public void TurnOfsystemControlCV()
+    .export TurnOfsystemControlCV
+        
+    TurnOfsystemControlCV:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  systemControlCV.SetActive(false);
+        PUSH, systemControlCV
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
          #  public void ValidateAdminPwd()
     .export ValidateAdminPwd
         
@@ -153,7 +176,7 @@
         PUSH, __0_intnl_SystemBoolean
         EXTERN, "SystemString.__Equals__SystemString__SystemBoolean"
         PUSH, __0_intnl_SystemBoolean
-        JUMP_IF_FALSE, 0x000001D4
+        JUMP_IF_FALSE, 0x00000208
         
          #  {
         
@@ -166,7 +189,7 @@
         PUSH, systemControlCV
         PUSH, __0_const_intnl_SystemBoolean
         EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
-        JUMP, 0x000001EC
+        JUMP, 0x00000220
         
          #  else
         
@@ -176,6 +199,27 @@
         PUSH, adminCheckText
         PUSH, __2_const_intnl_SystemString
         EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void DestroyPost()
+    .export DestroyPost
+        
+    DestroyPost:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  Destroy(postCV);
+        PUSH, postCV
+        EXTERN, "UnityEngineObject.__Destroy__UnityEngineObject__SystemVoid"
+        
+         #  Destroy(this);
+        PUSH, __0_this_intnl_AdminSystem
+        EXTERN, "UnityEngineObject.__Destroy__UnityEngineObject__SystemVoid"
         PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
         COPY
         JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
