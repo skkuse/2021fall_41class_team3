@@ -20,10 +20,32 @@ public class AdminSystem : UdonSharpBehaviour
     private Text adminCheckText;
     private string adminPwd = "1234";
 
+    private bool _isActive;
+    private float _timerCount;
+    public float timer = 3;
+
     void Start()
     {
+        systemControlCV.SetActive(false);
         pwdInput = adminCheckCV.GetComponentInChildren<InputField>();
         adminCheckText = adminCheckCV.GetComponentInChildren<Text>();
+    }
+
+    private void Update()
+    {
+        if(_isActive)
+        {
+            if(_timerCount >= timer)
+            {
+                systemControlCV.SetActive(false);
+                _timerCount = 0;
+                _isActive = false;
+            }
+            else
+            {
+                _timerCount += Time.deltaTime;
+            }
+        }
     }
 
     public void TurnOnAdminCheckCV()
@@ -50,6 +72,7 @@ public class AdminSystem : UdonSharpBehaviour
         {
             adminCheckCV.SetActive(false);
             systemControlCV.SetActive(true);
+            _isActive = true;
         }
         else
         {

@@ -1,0 +1,162 @@
+.data_start
+
+    .export Target
+    .export Message
+    .export timer
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    Message: %UnityEngineGameObject, null
+    Target: %UnityEngineGameObject, null
+    timer: %SystemSingle, null
+    _isActive: %SystemBoolean, null
+    _timerCount: %SystemSingle, null
+    __1_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_intnl_SystemBoolean: %SystemBoolean, null
+    __1_intnl_SystemSingle: %SystemSingle, null
+    __0_intnl_SystemSingle: %SystemSingle, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+
+.data_end
+
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using VRC.SDKBase;
+        
+         #  using VRC.Udon;
+        
+         #  public class Pedestal_Toggle_sharp : UdonSharpBehaviour
+.code_start
+        
+         #  public GameObject Target;
+        
+         #  public GameObject Message;
+        
+         #  private bool _isActive;
+        
+         #  private float _timerCount;
+        
+         #  public float timer = 5;
+        
+         #  void Start()
+    .export _start
+        
+    _start:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  Target.SetActive(false);
+        PUSH, Target
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  Message.SetActive(false);
+        PUSH, Message
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  private void Interact()
+    .export _interact
+        
+    _interact:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  Target.SetActive(true);
+        PUSH, Target
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  Message.SetActive(true);
+        PUSH, Message
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  _isActive = true;
+        PUSH, __1_const_intnl_SystemBoolean
+        PUSH, _isActive
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void Update()
+    .export _update
+        
+    _update:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  if (_isActive)
+        PUSH, _isActive
+        JUMP_IF_FALSE, 0x0000019C
+        
+         #  {
+        
+         #  if(_timerCount >= timer)
+        PUSH, _timerCount
+        PUSH, timer
+        PUSH, __0_intnl_SystemBoolean
+        EXTERN, "SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean"
+        PUSH, __0_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000158
+        
+         #  {
+        
+         #  Message.SetActive(false);
+        PUSH, Message
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  Target.SetActive(false);
+        PUSH, Target
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  _isActive = false;
+        PUSH, __0_const_intnl_SystemBoolean
+        PUSH, _isActive
+        COPY
+        
+         #  _timerCount = 0;
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, _timerCount
+        EXTERN, "SystemConvert.__ToSingle__SystemInt32__SystemSingle"
+        JUMP, 0x0000019C
+        
+         #  else
+        
+         #  {
+        
+         #  _timerCount += Time.deltaTime;
+        PUSH, __0_intnl_SystemSingle
+        EXTERN, "UnityEngineTime.__get_deltaTime__SystemSingle"
+        PUSH, _timerCount
+        PUSH, __0_intnl_SystemSingle
+        PUSH, __1_intnl_SystemSingle
+        EXTERN, "SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle"
+        PUSH, __1_intnl_SystemSingle
+        PUSH, _timerCount
+        COPY
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end
