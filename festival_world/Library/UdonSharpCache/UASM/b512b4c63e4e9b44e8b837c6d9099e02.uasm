@@ -1,0 +1,88 @@
+.data_start
+
+    .export selectTypeCV
+    .export plusBtn
+
+    __refl_const_intnl_udonTypeID: %SystemInt64, null
+    __refl_const_intnl_udonTypeName: %SystemString, null
+    plusBtn: %UnityEngineGameObject, null
+    selectTypeCV: %UnityEngineGameObject, null
+    __1_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_intnl_returnTarget_UInt32: %SystemUInt32, null
+
+.data_end
+
+        
+         #  using UdonSharp;
+        
+         #  using UnityEngine;
+        
+         #  using UnityEngine.UI;
+        
+         #  using VRC.SDKBase;
+        
+         #  using VRC.Udon;
+        
+         #  public class Plus : UdonSharpBehaviour
+.code_start
+        
+         #  [SerializeField]
+        
+         #  [SerializeField]
+        
+         #  void Start()
+    .export _start
+        
+    _start:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void TurnOnTypeCV()
+    .export TurnOnTypeCV
+        
+    TurnOnTypeCV:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  selectTypeCV.SetActive(true);
+        PUSH, selectTypeCV
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  plusBtn.SetActive(false);
+        PUSH, plusBtn
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void TurnOffTypeCV()
+    .export TurnOffTypeCV
+        
+    TurnOffTypeCV:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  selectTypeCV.SetActive(false);
+        PUSH, selectTypeCV
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+.code_end

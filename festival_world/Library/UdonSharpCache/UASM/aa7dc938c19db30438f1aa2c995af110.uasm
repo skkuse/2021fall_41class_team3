@@ -7,9 +7,10 @@
     .export nightsky
     .export skymode
     .export day_particle
-    .export night_particle
-    .export firework
+    .export firework1
     .export firework2
+    .export firework3
+    .export firework4
     .export timer
 
     __refl_const_intnl_udonTypeID: %SystemInt64, null
@@ -17,13 +18,14 @@
     night_clips: %UnityEngineAudioClipArray, null
     day_clips: %UnityEngineAudioClipArray, null
     audioSource: %UnityEngineAudioSource, null
-    night_particle: %UnityEngineGameObject, null
     day_particle: %UnityEngineGameObject, null
     skymode: %UnityEngineGameObject, null
     nightsky: %UnityEngineMaterial, null
     daysky: %UnityEngineMaterial, null
+    firework4: %UnityEngineParticleSystem, null
+    firework3: %UnityEngineParticleSystem, null
     firework2: %UnityEngineParticleSystem, null
-    firework: %UnityEngineParticleSystem, null
+    firework1: %UnityEngineParticleSystem, null
     timer: %SystemSingle, null
     _isActive: %SystemBoolean, null
     skymodeActive: %SystemBoolean, null
@@ -87,11 +89,13 @@
         
          #  public GameObject day_particle;
         
-         #  public GameObject night_particle;
-        
-         #  public ParticleSystem firework;
+         #  public ParticleSystem firework1;
         
          #  public ParticleSystem firework2;
+        
+         #  public ParticleSystem firework3;
+        
+         #  public ParticleSystem firework4;
         
          #  private bool _isActive;
         
@@ -164,7 +168,7 @@
         
          #  if (_isActive) {
         PUSH, _isActive
-        JUMP_IF_FALSE, 0x00000380
+        JUMP_IF_FALSE, 0x00000390
         
          #  if (_timerCount >= timer)
         PUSH, _timerCount
@@ -172,7 +176,7 @@
         PUSH, __0_intnl_SystemBoolean
         EXTERN, "SystemSingle.__op_GreaterThanOrEqual__SystemSingle_SystemSingle__SystemBoolean"
         PUSH, __0_intnl_SystemBoolean
-        JUMP_IF_FALSE, 0x0000033C
+        JUMP_IF_FALSE, 0x0000034C
         
          #  {
         
@@ -187,7 +191,7 @@
         PUSH, __1_intnl_SystemBoolean
         EXTERN, "SystemBoolean.__op_Equality__SystemBoolean_SystemBoolean__SystemBoolean"
         PUSH, __1_intnl_SystemBoolean
-        JUMP_IF_FALSE, 0x00000258
+        JUMP_IF_FALSE, 0x00000260
         
          #  {
         
@@ -205,17 +209,20 @@
         PUSH, __1_const_intnl_SystemBoolean
         EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
         
-         #  night_particle.SetActive(true);
-        PUSH, night_particle
-        PUSH, __0_const_intnl_SystemBoolean
-        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
-        
-         #  firework.Play();
-        PUSH, firework
+         #  firework1.Play();
+        PUSH, firework1
         EXTERN, "UnityEngineParticleSystem.__Play__SystemVoid"
         
          #  firework2.Play();
         PUSH, firework2
+        EXTERN, "UnityEngineParticleSystem.__Play__SystemVoid"
+        
+         #  firework3.Play();
+        PUSH, firework3
+        EXTERN, "UnityEngineParticleSystem.__Play__SystemVoid"
+        
+         #  firework4.Play();
+        PUSH, firework4
         EXTERN, "UnityEngineParticleSystem.__Play__SystemVoid"
         
          #  audioSource.clip = night_GetRandomClip();
@@ -228,7 +235,7 @@
          #  audioSource.Play();
         PUSH, audioSource
         EXTERN, "UnityEngineAudioSource.__Play__SystemVoid"
-        JUMP, 0x00000308
+        JUMP, 0x00000318
         
          #  else
         
@@ -243,17 +250,20 @@
         PUSH, __0_const_intnl_SystemBoolean
         EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
         
-         #  night_particle.SetActive(false);
-        PUSH, night_particle
-        PUSH, __1_const_intnl_SystemBoolean
-        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
-        
-         #  firework.Stop();
-        PUSH, firework
+         #  firework1.Stop();
+        PUSH, firework1
         EXTERN, "UnityEngineParticleSystem.__Stop__SystemVoid"
         
          #  firework2.Stop();
         PUSH, firework2
+        EXTERN, "UnityEngineParticleSystem.__Stop__SystemVoid"
+        
+         #  firework3.Stop();
+        PUSH, firework3
+        EXTERN, "UnityEngineParticleSystem.__Stop__SystemVoid"
+        
+         #  firework4.Stop();
+        PUSH, firework4
         EXTERN, "UnityEngineParticleSystem.__Stop__SystemVoid"
         
          #  day_particle.SetActive(true);
@@ -281,7 +291,7 @@
         PUSH, __1_const_intnl_SystemBoolean
         PUSH, _isActive
         COPY
-        JUMP, 0x00000380
+        JUMP, 0x00000390
         
          #  else {
         
@@ -309,7 +319,7 @@
         PUSH, __1_intnl_SystemBoolean
         EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
         PUSH, __1_intnl_SystemBoolean
-        JUMP_IF_FALSE, 0x00000480
+        JUMP_IF_FALSE, 0x00000490
         
          #  if (skymodeActive == true)
         PUSH, skymodeActive
@@ -317,7 +327,7 @@
         PUSH, __2_intnl_SystemBoolean
         EXTERN, "SystemBoolean.__op_Equality__SystemBoolean_SystemBoolean__SystemBoolean"
         PUSH, __2_intnl_SystemBoolean
-        JUMP_IF_FALSE, 0x00000448
+        JUMP_IF_FALSE, 0x00000458
         
          #  {
         
@@ -331,7 +341,7 @@
          #  audioSource.Play();
         PUSH, audioSource
         EXTERN, "UnityEngineAudioSource.__Play__SystemVoid"
-        JUMP, 0x00000480
+        JUMP, 0x00000490
         
          #  else {
         
