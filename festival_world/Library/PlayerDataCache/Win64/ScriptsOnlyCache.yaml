@@ -83,6 +83,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -94,53 +96,53 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 17958}
+      Script: {instanceID: 18042}
     - Class: 114
-      Script: {instanceID: 18308}
+      Script: {instanceID: 18392}
     - Class: 114
-      Script: {instanceID: 18380}
-    - Class: 114
-      Script: {instanceID: 18978}
-    - Class: 114
-      Script: {instanceID: 19060}
-    - Class: 114
-      Script: {instanceID: 19062}
+      Script: {instanceID: 18464}
     - Class: 114
       Script: {instanceID: 19064}
     - Class: 114
-      Script: {instanceID: 19078}
+      Script: {instanceID: 19146}
     - Class: 114
-      Script: {instanceID: 19082}
+      Script: {instanceID: 19148}
     - Class: 114
-      Script: {instanceID: 19084}
+      Script: {instanceID: 19150}
     - Class: 114
-      Script: {instanceID: 19086}
+      Script: {instanceID: 19164}
     - Class: 114
-      Script: {instanceID: 19088}
+      Script: {instanceID: 19168}
     - Class: 114
-      Script: {instanceID: 19092}
+      Script: {instanceID: 19170}
     - Class: 114
-      Script: {instanceID: 19134}
+      Script: {instanceID: 19172}
     - Class: 114
-      Script: {instanceID: 19702}
+      Script: {instanceID: 19174}
     - Class: 114
-      Script: {instanceID: 20026}
+      Script: {instanceID: 19178}
     - Class: 114
-      Script: {instanceID: 20062}
+      Script: {instanceID: 19220}
     - Class: 114
-      Script: {instanceID: 20386}
+      Script: {instanceID: 19792}
     - Class: 114
-      Script: {instanceID: 20446}
+      Script: {instanceID: 20116}
     - Class: 114
-      Script: {instanceID: 20948}
+      Script: {instanceID: 20152}
     - Class: 114
-      Script: {instanceID: 21070}
+      Script: {instanceID: 20478}
     - Class: 114
-      Script: {instanceID: 21822}
+      Script: {instanceID: 20538}
     - Class: 114
-      Script: {instanceID: 21886}
+      Script: {instanceID: 21040}
     - Class: 114
-      Script: {instanceID: 21952}
+      Script: {instanceID: 21162}
+    - Class: 114
+      Script: {instanceID: 21914}
+    - Class: 114
+      Script: {instanceID: 21978}
+    - Class: 114
+      Script: {instanceID: 22044}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -319,4 +321,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/main_scene.unity
-  playerPath: C:/Users/annie/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw
+  playerPath: C:/Users/booin/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw
