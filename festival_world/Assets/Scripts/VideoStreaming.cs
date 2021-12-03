@@ -21,12 +21,10 @@ public class VideoStreaming : UdonSharpBehaviour
     private GameObject videoControlCV;
 
     private Slider mainVolumeSlider;
-    private Toggle loopToggle;
 
     private void Start()
     {
-        mainVolumeSlider = GetComponentInChildren<Slider>();
-        loopToggle = GetComponentInChildren<Toggle>();
+        mainVolumeSlider = videoControlCV.GetComponentInChildren<Slider>();
     }
 
     public void ToggleMute()
@@ -36,6 +34,7 @@ public class VideoStreaming : UdonSharpBehaviour
     public void SetVolume()
     {
         mainAudioSource.volume = mainVolumeSlider.value;
+        Debug.Log(mainVolumeSlider.value);
         Debug.Log(mainAudioSource.volume);
     }
 
@@ -44,10 +43,7 @@ public class VideoStreaming : UdonSharpBehaviour
         if (!targetVideoPlayer.IsPlaying) targetVideoPlayer.Play();      
         else targetVideoPlayer.Pause();
 
+        Debug.Log("PlayOrStop");
         Debug.Log(targetVideoPlayer.IsPlaying);
-    }
-    public void TurnOffVideoControlCV()
-    {
-        videoControlCV.SetActive(false);
     }
 }
