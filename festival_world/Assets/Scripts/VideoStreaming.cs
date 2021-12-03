@@ -12,7 +12,7 @@ public class VideoStreaming : UdonSharpBehaviour
     private AudioSource miniAudioSource;
 
     [SerializeField]
-    private AudioSource mainAudioSource;
+    private AudioSource[] mainAudioSource;
 
     [SerializeField]
     private VRCAVProVideoPlayer targetVideoPlayer;
@@ -33,9 +33,9 @@ public class VideoStreaming : UdonSharpBehaviour
     }
     public void SetVolume()
     {
-        mainAudioSource.volume = mainVolumeSlider.value;
+        foreach(var source in mainAudioSource)
+            source.volume = mainVolumeSlider.value;
         Debug.Log(mainVolumeSlider.value);
-        Debug.Log(mainAudioSource.volume);
     }
 
     public void PlayOrStop()

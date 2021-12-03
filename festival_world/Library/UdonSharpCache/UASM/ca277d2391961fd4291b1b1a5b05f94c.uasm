@@ -7,21 +7,25 @@
 
     __refl_const_intnl_udonTypeID: %SystemInt64, null
     __refl_const_intnl_udonTypeName: %SystemString, null
-    mainAudioSource: %UnityEngineAudioSource, null
     miniAudioSource: %UnityEngineAudioSource, null
+    mainAudioSource: %UnityEngineAudioSourceArray, null
     targetVideoPlayer: %VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer, null
     videoControlCV: %UnityEngineGameObject, null
     mainVolumeSlider: %UnityEngineUISlider, null
+    __0_source_AudioSource: %UnityEngineAudioSource, null
+    __1_const_intnl_SystemInt32: %SystemInt32, null
+    __0_const_intnl_SystemInt32: %SystemInt32, null
     __0_const_intnl_SystemString: %SystemString, null
     __0_const_intnl_SystemType: %SystemType, null
     __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __5_intnl_SystemBoolean: %SystemBoolean, null
     __4_intnl_SystemBoolean: %SystemBoolean, null
     __3_intnl_SystemBoolean: %SystemBoolean, null
     __2_intnl_SystemBoolean: %SystemBoolean, null
     __1_intnl_SystemBoolean: %SystemBoolean, null
     __0_intnl_SystemBoolean: %SystemBoolean, null
-    __2_intnl_SystemSingle: %SystemSingle, null
-    __1_intnl_SystemSingle: %SystemSingle, null
+    __1_intnl_SystemInt32: %SystemInt32, null
+    __0_intnl_SystemInt32: %SystemInt32, null
     __0_intnl_SystemSingle: %SystemSingle, null
     __0_intnl_UnityEngineTransform: %UnityEngineTransform, null
     __0_intnl_returnTarget_UInt32: %SystemUInt32, null
@@ -109,26 +113,42 @@
         
          #  {
         
-         #  mainAudioSource.volume = mainVolumeSlider.value;
+         #  foreach(var source in mainAudioSource)
+        PUSH, __0_const_intnl_SystemInt32
+        PUSH, __0_intnl_SystemInt32
+        COPY
+        PUSH, mainAudioSource
+        PUSH, __1_intnl_SystemInt32
+        EXTERN, "UnityEngineAudioSourceArray.__get_Length__SystemInt32"
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __1_intnl_SystemInt32
+        PUSH, __2_intnl_SystemBoolean
+        EXTERN, "SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean"
+        PUSH, __2_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000194
+        PUSH, mainAudioSource
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __0_source_AudioSource
+        EXTERN, "SystemObjectArray.__Get__SystemInt32__SystemObject"
+        
+         #  source.volume = mainVolumeSlider.value;
         PUSH, mainVolumeSlider
         PUSH, __0_intnl_SystemSingle
         EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
-        PUSH, mainAudioSource
+        PUSH, __0_source_AudioSource
         PUSH, __0_intnl_SystemSingle
         EXTERN, "UnityEngineAudioSource.__set_volume__SystemSingle__SystemVoid"
+        PUSH, __0_intnl_SystemInt32
+        PUSH, __1_const_intnl_SystemInt32
+        PUSH, __0_intnl_SystemInt32
+        EXTERN, "SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32"
+        JUMP, 0x000000EC
         
          #  Debug.Log(mainVolumeSlider.value);
         PUSH, mainVolumeSlider
-        PUSH, __1_intnl_SystemSingle
+        PUSH, __0_intnl_SystemSingle
         EXTERN, "UnityEngineUISlider.__get_value__SystemSingle"
-        PUSH, __1_intnl_SystemSingle
-        EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
-        
-         #  Debug.Log(mainAudioSource.volume);
-        PUSH, mainAudioSource
-        PUSH, __2_intnl_SystemSingle
-        EXTERN, "UnityEngineAudioSource.__get_volume__SystemSingle"
-        PUSH, __2_intnl_SystemSingle
+        PUSH, __0_intnl_SystemSingle
         EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
         PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
         COPY
@@ -146,16 +166,16 @@
         
          #  if (!targetVideoPlayer.IsPlaying) targetVideoPlayer.Play();
         PUSH, targetVideoPlayer
-        PUSH, __2_intnl_SystemBoolean
+        PUSH, __3_intnl_SystemBoolean
         EXTERN, "VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer.__get_IsPlaying__SystemBoolean"
-        PUSH, __2_intnl_SystemBoolean
         PUSH, __3_intnl_SystemBoolean
+        PUSH, __4_intnl_SystemBoolean
         EXTERN, "SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean"
-        PUSH, __3_intnl_SystemBoolean
-        JUMP_IF_FALSE, 0x000001B4
+        PUSH, __4_intnl_SystemBoolean
+        JUMP_IF_FALSE, 0x00000230
         PUSH, targetVideoPlayer
         EXTERN, "VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer.__Play__SystemVoid"
-        JUMP, 0x000001C4
+        JUMP, 0x00000240
         
          #  else targetVideoPlayer.Pause();
         PUSH, targetVideoPlayer
@@ -167,9 +187,9 @@
         
          #  Debug.Log(targetVideoPlayer.IsPlaying);
         PUSH, targetVideoPlayer
-        PUSH, __4_intnl_SystemBoolean
+        PUSH, __5_intnl_SystemBoolean
         EXTERN, "VRCSDK3VideoComponentsBaseBaseVRCVideoPlayer.__get_IsPlaying__SystemBoolean"
-        PUSH, __4_intnl_SystemBoolean
+        PUSH, __5_intnl_SystemBoolean
         EXTERN, "UnityEngineDebug.__Log__SystemObject__SystemVoid"
         PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
         COPY
