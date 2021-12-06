@@ -9,10 +9,11 @@ using VRC.Udon;
 public class VideoStreaming : UdonSharpBehaviour
 {
     [SerializeField]
-    private AudioSource miniAudioSource;
+    private GameObject[] miniScreenSystems;
 
     [SerializeField]
-    private AudioSource[] mainAudioSource;
+    private GameObject mainSpeaker;
+    private AudioSource[] mainAudioSources;
 
     [SerializeField]
     private VRCAVProVideoPlayer targetVideoPlayer;
@@ -22,6 +23,12 @@ public class VideoStreaming : UdonSharpBehaviour
 
     private Slider mainVolumeSlider;
 
+    [UdonSynced]
+    private float volume = 0.5f;
+
+    [UdonSynced]
+    private bool playVideo = true;
+
     private void Start()
     {
         mainVolumeSlider = videoControlCV.GetComponentInChildren<Slider>();
@@ -29,21 +36,49 @@ public class VideoStreaming : UdonSharpBehaviour
 
     public void ToggleMute()
     {
-        miniAudioSource.mute = !miniAudioSource.mute;
+        foreach(var mini in miniScreenSystems)
+        {
+            AudioSource miniAudioSource = mini.GetComponentInChildren<AudioSource>();
+            Toggle muteToggle = mini.GetComponentInChildren<Toggle>();
+            miniAudioSource.mute = muteToggle.isOn;
+        }
     }
     public void SetVolume()
     {
-        foreach(var source in mainAudioSource)
-            source.volume = mainVolumeSlider.value;
-        Debug.Log(mainVolumeSlider.value);
+        volume = mainVolumeSlider.value;
+        Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
+
+        Debug.Log(volume);
+        mainAudioSources = mainSpeaker.GetComponentsInChildren<AudioSource>();
+        foreach (var source in mainAudioSources)
+            source.volume = volume;
+
+    }
+
+    public override void OnDeserialization()
+    {
+        Debug.Log(volume);
+        mainAudioSources = mainSpeaker.GetComponentsInChildren<AudioSource>();
+        foreach (var source in mainAudioSources)
+            source.volume = volume;
+        
+        if (playVideo && !targetVideoPlayer.IsPlaying) targetVideoPlayer.Play();
+        else if (!playVideo && targetVideoPlayer.IsPlaying) targetVideoPlayer.Pause();
+
+        Debug.Log("PlayOrStop");
+        Debug.Log(targetVideoPlayer.IsPlaying);
     }
 
     public void PlayOrStop()
     {
-        if (!targetVideoPlayer.IsPlaying) targetVideoPlayer.Play();      
+        playVideo = !targetVideoPlayer.IsPlaying;
+        Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
+
+        if (playVideo) targetVideoPlayer.Play();      
         else targetVideoPlayer.Pause();
 
         Debug.Log("PlayOrStop");
         Debug.Log(targetVideoPlayer.IsPlaying);
     }
+
 }

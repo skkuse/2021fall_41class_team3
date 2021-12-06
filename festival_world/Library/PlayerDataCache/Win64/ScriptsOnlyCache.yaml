@@ -30,6 +30,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
     VRC.Udon.Editor.dll:
     - VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UI.GraphView.UdonGraphWindow
     - VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UdonGraphProgramAsset
@@ -141,6 +142,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14670}
     - Class: 114
       Script: {instanceID: 15570}
+    - Class: 114
+      Script: {instanceID: 15606}
     - Class: 114
       Script: {instanceID: 15702}
     - Class: 115
@@ -312,6 +315,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: StandaloneInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: aa88ae22474df55295327e4ee99e5a24
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Toggle
   - hash:
       serializedVersion: 2
       Hash: 5db75d920ffb77b623077e95eb9ecdb8
