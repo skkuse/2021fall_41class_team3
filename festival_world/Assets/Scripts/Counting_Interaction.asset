@@ -15,28 +15,65 @@ MonoBehaviour:
   serializedUdonProgramAsset: {fileID: 11400000, guid: 824ecfc7477013047a8606bdaad3e852,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export TextTarget\r\n    \r\n    __instance_0:
-    %TMProTextMeshProUGUI, null\r\n    __value_0: %SystemString, null\r\n    __value_1:
+    %UnityEngineUIText, null\r\n    __value_0: %SystemString, null\r\n    __value_1:
     %SystemInt32, null\r\n    __Int32_0: %SystemInt32, null\r\n    __Int32_1: %SystemInt32,
-    null\r\n    __value_2: %SystemString, null\r\n    __instance_1: %TMProTextMeshProUGUI,
-    null\r\n    TextTarget: %TMProTextMeshProUGUI, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    null\r\n    __value_2: %SystemString, null\r\n    __instance_1: %UnityEngineUIText,
+    null\r\n    TextTarget: %UnityEngineUIText, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
     .export _interact\r\n    \r\n    _interact:\r\n    \r\n        PUSH, TextTarget\r\n       
     PUSH, __instance_0\r\n        COPY\r\n        PUSH, TextTarget\r\n        PUSH,
     __instance_1\r\n        COPY\r\n        PUSH, __instance_1\r\n        PUSH, __value_2\r\n       
-    EXTERN, \"TMProTextMeshProUGUI.__get_text__SystemString\"\r\n        PUSH, __value_2\r\n       
+    EXTERN, \"UnityEngineUIText.__get_text__SystemString\"\r\n        PUSH, __value_2\r\n       
     PUSH, __Int32_0\r\n        EXTERN, \"SystemConvert.__ToInt32__SystemString__SystemInt32\"\r\n       
     PUSH, __Int32_0\r\n        PUSH, __Int32_1\r\n        PUSH, __value_1\r\n       
     EXTERN, \"SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32\"\r\n       
     PUSH, __value_1\r\n        PUSH, __value_0\r\n        EXTERN, \"SystemConvert.__ToString__SystemInt32__SystemString\"\r\n       
-    PUSH, __instance_0\r\n        PUSH, __value_0\r\n        EXTERN, \"TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid\"\r\n       
+    PUSH, __instance_0\r\n        PUSH, __value_0\r\n        EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\r\n       
     JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
     description: 
     nodes:
-    - fullName: Variable_TMProTextMeshProUGUI
-      uid: c121d5a0-9655-4cbd-a77a-366788a26f41
-      position: {x: -5797.8594, y: -1005.5098}
+    - fullName: SystemConvert.__ToInt32__SystemString__SystemInt32
+      uid: 76b0cf71-2491-4625-adfc-1eff41918817
+      position: {x: 585.965, y: 66.3875}
+      nodeUIDs:
+      - 1dea8ead-f298-416b-a8d5-06cb3f553fb3|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
+      uid: cd446148-051f-4c3e-87eb-7d7e9cdd6827
+      position: {x: 755.965, y: 66.3875}
+      nodeUIDs:
+      - 76b0cf71-2491-4625-adfc-1eff41918817
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|1
+    - fullName: SystemConvert.__ToString__SystemInt32__SystemString
+      uid: aaa0624a-d30c-41bd-a144-aa9589039ad1
+      position: {x: 919.965, y: 61.387524}
+      nodeUIDs:
+      - cd446148-051f-4c3e-87eb-7d7e9cdd6827|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
+    - fullName: Event_Interact
+      uid: d29d8c3f-97a5-4074-9ffd-00dcf5c03d12
+      position: {x: 267.2, y: -84.00002}
+      nodeUIDs: []
+      flowUIDs:
+      - 67a47ecb-475b-4eab-89e3-eb9ca610231f
+      nodeValues: []
+    - fullName: Variable_UnityEngineUIText
+      uid: a33458d1-158b-44ff-9178-20f4c25aaa7e
+      position: {x: 0, y: 0}
       nodeUIDs:
       - 
       - 
@@ -58,80 +95,31 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
-      uid: cb1803ef-3473-43f7-9905-1a600efa9a93
-      position: {x: 145.965, y: 82.3875}
+      uid: 476ed7ef-1b43-4c33-ac1d-cb850e887ce4
+      position: {x: 201.75002, y: 83.45}
       nodeUIDs:
       - 
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|c121d5a0-9655-4cbd-a77a-366788a26f41
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|a33458d1-158b-44ff-9178-20f4c25aaa7e
       - unityObjectValue: {fileID: 0}
         stringValue: 
-    - fullName: TMProTextMeshProUGUI.__get_text__SystemString
-      uid: 9979a814-4c54-445c-bc0d-2295c1e4469d
-      position: {x: 412.965, y: 81.38751}
+    - fullName: UnityEngineUIText.__get_text__SystemString
+      uid: 1dea8ead-f298-416b-a8d5-06cb3f553fb3
+      position: {x: 399, y: 82.999985}
       nodeUIDs:
-      - cb1803ef-3473-43f7-9905-1a600efa9a93
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-    - fullName: SystemConvert.__ToInt32__SystemString__SystemInt32
-      uid: 76b0cf71-2491-4625-adfc-1eff41918817
-      position: {x: 585.965, y: 66.3875}
-      nodeUIDs:
-      - 9979a814-4c54-445c-bc0d-2295c1e4469d
+      - 476ed7ef-1b43-4c33-ac1d-cb850e887ce4|0
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: 
-    - fullName: SystemInt32.__op_Addition__SystemInt32_SystemInt32__SystemInt32
-      uid: cd446148-051f-4c3e-87eb-7d7e9cdd6827
-      position: {x: 755.965, y: 66.3875}
+    - fullName: UnityEngineUIText.__set_text__SystemString__SystemVoid
+      uid: 67a47ecb-475b-4eab-89e3-eb9ca610231f
+      position: {x: 525.6501, y: -96.50003}
       nodeUIDs:
-      - 76b0cf71-2491-4625-adfc-1eff41918817
-      - 
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
-      - unityObjectValue: {fileID: 0}
-        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|1
-    - fullName: TMProTextMeshProUGUI.__set_text__SystemString__SystemVoid
-      uid: 2fe8e766-21ff-45fa-80bf-34c369c4b1cb
-      position: {x: 547.965, y: -103.61251}
-      nodeUIDs:
-      - cb1803ef-3473-43f7-9905-1a600efa9a93
-      - aaa0624a-d30c-41bd-a144-aa9589039ad1
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-      - unityObjectValue: {fileID: 0}
-        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|100
-    - fullName: SystemConvert.__ToString__SystemInt32__SystemString
-      uid: aaa0624a-d30c-41bd-a144-aa9589039ad1
-      position: {x: 919.965, y: 61.387524}
-      nodeUIDs:
-      - cd446148-051f-4c3e-87eb-7d7e9cdd6827
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
-    - fullName: Event_Interact
-      uid: d29d8c3f-97a5-4074-9ffd-00dcf5c03d12
-      position: {x: 165.61249, y: -61.227493}
-      nodeUIDs: []
-      flowUIDs:
-      - 2fe8e766-21ff-45fa-80bf-34c369c4b1cb
-      nodeValues: []
-    - fullName: UnityEngineUIButton.__OnPointerClick__UnityEngineEventSystemsPointerEventData__SystemVoid
-      uid: 35365aea-18bd-4838-b43c-2aaa69903c81
-      position: {x: 298, y: -236}
-      nodeUIDs:
-      - 
-      - 
+      - 476ed7ef-1b43-4c33-ac1d-cb850e887ce4|0
+      - aaa0624a-d30c-41bd-a144-aa9589039ad1|0
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
@@ -139,9 +127,12 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: 
     updateOrder: 0
-  graphElementData: []
+  graphElementData:
+  - type: 5
+    uid: b8a148b0-0d1d-4aa1-b7df-e02a579ea255
+    jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":800.0,"y":21.0,"width":292.0,"height":139.0}}'
   viewTransform:
-    position: {x: 81, y: 347}
-    scale: 0.8695652
+    position: {x: -57, y: 218}
+    scale: 1
   version: 1.0.0
   showAssembly: 0

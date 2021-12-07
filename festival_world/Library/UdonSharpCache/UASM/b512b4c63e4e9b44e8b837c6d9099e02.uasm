@@ -1,15 +1,29 @@
 .data_start
 
-    .export selectTypeCV
-    .export plusBtn
+    .export textInputCV
+    .export typeSelectCV
+    .export textPost
+    .export imagePost
+    .export votingPost
 
     __refl_const_intnl_udonTypeID: %SystemInt64, null
     __refl_const_intnl_udonTypeName: %SystemString, null
-    plusBtn: %UnityEngineGameObject, null
-    selectTypeCV: %UnityEngineGameObject, null
+    votingPost: %UnityEngineGameObject, null
+    imagePost: %UnityEngineGameObject, null
+    textPost: %UnityEngineGameObject, null
+    typeSelectCV: %UnityEngineGameObject, null
+    textInputCV: %UnityEngineGameObject, null
+    contentField: %UnityEngineUIInputField, null
+    textPostContent: %UnityEngineUIText, null
     __1_const_intnl_SystemBoolean: %SystemBoolean, null
     __0_const_intnl_SystemBoolean: %SystemBoolean, null
+    __0_const_intnl_SystemString: %SystemString, null
+    __1_const_intnl_SystemType: %SystemType, null
+    __0_const_intnl_SystemType: %SystemType, null
     __0_const_intnl_SystemUInt32: %SystemUInt32, null
+    __0_intnl_SystemString: %SystemString, null
+    __1_intnl_UnityEngineTransform: %UnityEngineTransform, null
+    __0_intnl_UnityEngineTransform: %UnityEngineTransform, null
     __0_intnl_returnTarget_UInt32: %SystemUInt32, null
 
 .data_end
@@ -25,12 +39,20 @@
         
          #  using VRC.Udon;
         
-         #  public class Plus : UdonSharpBehaviour
+         #  using System.Collections;
+        
+         #  public class NewPost : UdonSharpBehaviour
 .code_start
         
          #  [SerializeField]
         
          #  [SerializeField]
+        
+         #  [SerializeField]
+        
+         #  private InputField contentField;
+        
+         #  private Text textPostContent;
         
          #  void Start()
     .export _start
@@ -40,27 +62,73 @@
         PUSH, __0_const_intnl_SystemUInt32
         
          #  {
+        
+         #  contentField = textInputCV.GetComponentInChildren<InputField>();
+        PUSH, textInputCV
+        PUSH, __0_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineGameObject.__get_transform__UnityEngineTransform"
+        PUSH, __0_intnl_UnityEngineTransform
+        PUSH, __0_const_intnl_SystemType
+        PUSH, contentField
+        EXTERN, "UnityEngineUIInputField.__GetComponentInChildren__T"
+        
+         #  textPostContent = textPost.GetComponentInChildren<Text>();
+        PUSH, textPost
+        PUSH, __1_intnl_UnityEngineTransform
+        EXTERN, "UnityEngineGameObject.__get_transform__UnityEngineTransform"
+        PUSH, __1_intnl_UnityEngineTransform
+        PUSH, __1_const_intnl_SystemType
+        PUSH, textPostContent
+        EXTERN, "UnityEngineUIText.__GetComponentInChildren__T"
         PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
         COPY
         JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
         
         
-         #  public void TurnOnTypeCV()
-    .export TurnOnTypeCV
+         #  public void TurnOnTextInputCV()
+    .export TurnOnTextInputCV
         
-    TurnOnTypeCV:
+    TurnOnTextInputCV:
         
         PUSH, __0_const_intnl_SystemUInt32
         
          #  {
         
-         #  selectTypeCV.SetActive(true);
-        PUSH, selectTypeCV
+         #  textInputCV.SetActive(true);
+        PUSH, textInputCV
         PUSH, __0_const_intnl_SystemBoolean
         EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
         
-         #  plusBtn.SetActive(false);
-        PUSH, plusBtn
+         #  typeSelectCV.SetActive(false);
+        PUSH, typeSelectCV
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  contentField.text = "";
+        PUSH, contentField
+        PUSH, __0_const_intnl_SystemString
+        EXTERN, "UnityEngineUIInputField.__set_text__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void TurnOffAllCV()
+    .export TurnOffAllCV
+        
+    TurnOffAllCV:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  textInputCV.SetActive(false);
+        PUSH, textInputCV
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  typeSelectCV.SetActive(false);
+        PUSH, typeSelectCV
         PUSH, __1_const_intnl_SystemBoolean
         EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
         PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
@@ -68,17 +136,94 @@
         JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
         
         
-         #  public void TurnOffTypeCV()
-    .export TurnOffTypeCV
+         #  public void GetTextInput()
+    .export GetTextInput
         
-    TurnOffTypeCV:
+    GetTextInput:
         
         PUSH, __0_const_intnl_SystemUInt32
         
          #  {
         
-         #  selectTypeCV.SetActive(false);
-        PUSH, selectTypeCV
+         #  textPostContent.text = contentField.text;
+        PUSH, contentField
+        PUSH, __0_intnl_SystemString
+        EXTERN, "UnityEngineUIInputField.__get_text__SystemString"
+        PUSH, textPostContent
+        PUSH, __0_intnl_SystemString
+        EXTERN, "UnityEngineUIText.__set_text__SystemString__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void TurnOnTextPost()
+    .export TurnOnTextPost
+        
+    TurnOnTextPost:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  textPost.SetActive(true);
+        PUSH, textPost
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  textInputCV.SetActive(false);
+        PUSH, textInputCV
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  typeSelectCV.SetActive(false);
+        PUSH, typeSelectCV
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void TurnOnImagePost()
+    .export TurnOnImagePost
+        
+    TurnOnImagePost:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  imagePost.SetActive(true);
+        PUSH, imagePost
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  typeSelectCV.SetActive(false);
+        PUSH, typeSelectCV
+        PUSH, __1_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue
+        COPY
+        JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
+        
+        
+         #  public void TurnOnVotingPost()
+    .export TurnOnVotingPost
+        
+    TurnOnVotingPost:
+        
+        PUSH, __0_const_intnl_SystemUInt32
+        
+         #  {
+        
+         #  votingPost.SetActive(true);
+        PUSH, votingPost
+        PUSH, __0_const_intnl_SystemBoolean
+        EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
+        
+         #  typeSelectCV.SetActive(false);
+        PUSH, typeSelectCV
         PUSH, __1_const_intnl_SystemBoolean
         EXTERN, "UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid"
         PUSH, __0_intnl_returnTarget_UInt32 # Function epilogue

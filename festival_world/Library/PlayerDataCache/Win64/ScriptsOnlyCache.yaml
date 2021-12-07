@@ -11,9 +11,6 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
-    - TMPro.TMP_Settings
-    - TMPro.TMP_SpriteAsset
-    - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -96,23 +93,21 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 18042}
+      Script: {instanceID: 18044}
     - Class: 114
-      Script: {instanceID: 18392}
+      Script: {instanceID: 18394}
     - Class: 114
-      Script: {instanceID: 18464}
+      Script: {instanceID: 18466}
     - Class: 114
-      Script: {instanceID: 19064}
-    - Class: 114
-      Script: {instanceID: 19146}
+      Script: {instanceID: 19066}
     - Class: 114
       Script: {instanceID: 19148}
     - Class: 114
       Script: {instanceID: 19150}
     - Class: 114
-      Script: {instanceID: 19164}
+      Script: {instanceID: 19152}
     - Class: 114
-      Script: {instanceID: 19168}
+      Script: {instanceID: 19166}
     - Class: 114
       Script: {instanceID: 19170}
     - Class: 114
@@ -120,29 +115,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 19174}
     - Class: 114
-      Script: {instanceID: 19178}
+      Script: {instanceID: 19176}
     - Class: 114
-      Script: {instanceID: 19220}
+      Script: {instanceID: 19180}
     - Class: 114
-      Script: {instanceID: 19792}
+      Script: {instanceID: 19222}
     - Class: 114
-      Script: {instanceID: 20116}
+      Script: {instanceID: 19794}
     - Class: 114
-      Script: {instanceID: 20152}
+      Script: {instanceID: 20118}
     - Class: 114
-      Script: {instanceID: 20478}
+      Script: {instanceID: 20154}
     - Class: 114
-      Script: {instanceID: 20538}
+      Script: {instanceID: 20480}
     - Class: 114
-      Script: {instanceID: 21040}
+      Script: {instanceID: 20540}
     - Class: 114
-      Script: {instanceID: 21162}
+      Script: {instanceID: 21042}
     - Class: 114
-      Script: {instanceID: 21914}
+      Script: {instanceID: 21164}
     - Class: 114
-      Script: {instanceID: 21978}
+      Script: {instanceID: 21916}
     - Class: 114
-      Script: {instanceID: 22044}
+      Script: {instanceID: 21980}
+    - Class: 114
+      Script: {instanceID: 22046}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -321,4 +318,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/main_scene.unity
-  playerPath: C:/Users/annie/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw
+  playerPath: C:/Users/SH/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw
