@@ -94,55 +94,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 18054}
+      Script: {instanceID: 11522}
     - Class: 114
-      Script: {instanceID: 18404}
+      Script: {instanceID: 11528}
     - Class: 114
-      Script: {instanceID: 18476}
+      Script: {instanceID: 11532}
     - Class: 114
-      Script: {instanceID: 19078}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 19162}
+      Script: {instanceID: 11538}
     - Class: 114
-      Script: {instanceID: 19164}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 19166}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 19180}
+      Script: {instanceID: 12790}
     - Class: 114
-      Script: {instanceID: 19184}
+      Script: {instanceID: 12876}
     - Class: 114
-      Script: {instanceID: 19186}
+      Script: {instanceID: 12878}
     - Class: 114
-      Script: {instanceID: 19188}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 19190}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 19194}
+      Script: {instanceID: 12896}
     - Class: 114
-      Script: {instanceID: 19236}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 19808}
+      Script: {instanceID: 12900}
     - Class: 114
-      Script: {instanceID: 20132}
+      Script: {instanceID: 12904}
     - Class: 114
-      Script: {instanceID: 20168}
+      Script: {instanceID: 12950}
     - Class: 114
-      Script: {instanceID: 20494}
+      Script: {instanceID: 13556}
     - Class: 114
-      Script: {instanceID: 20556}
+      Script: {instanceID: 13886}
     - Class: 114
-      Script: {instanceID: 21058}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 21180}
+      Script: {instanceID: 14338}
     - Class: 114
-      Script: {instanceID: 21932}
+      Script: {instanceID: 14872}
     - Class: 114
-      Script: {instanceID: 21966}
+      Script: {instanceID: 15800}
     - Class: 114
-      Script: {instanceID: 21996}
+      Script: {instanceID: 15836}
     - Class: 114
-      Script: {instanceID: 22062}
+      Script: {instanceID: 15932}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -176,10 +176,10 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 4bc4346a71a8df53a6b106f68ef3a190
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: CanvasScaler
+      Hash: 3614bae5f2ee7232eea55e930d1eb42d
+    assemblyName: VRCSDK3.dll
+    namespaceName: VRC.SDK3.Components
+    className: VRCPickup
   - hash:
       serializedVersion: 2
       Hash: aeb62f729c52c814dec86c47dcac1471
@@ -188,10 +188,34 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: f64fd37da5cb89243ec68b5026d70bb8
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 7072231382eb3c4871b3dd75ad0227e1
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
+  - hash:
+      serializedVersion: 2
       Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 4bc4346a71a8df53a6b106f68ef3a190
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
   - hash:
       serializedVersion: 2
       Hash: bad0f5a58d4b55ed1442379677ba2587
@@ -216,12 +240,6 @@ ScriptsOnlyBuild:
     assemblyName: VRCSDK3.dll
     namespaceName: VRC.SDK3.Video.Components.AVPro
     className: VRCAVProVideoSpeaker
-  - hash:
-      serializedVersion: 2
-      Hash: 3614bae5f2ee7232eea55e930d1eb42d
-    assemblyName: VRCSDK3.dll
-    namespaceName: VRC.SDK3.Components
-    className: VRCPickup
   - hash:
       serializedVersion: 2
       Hash: 7329407fdb21bb0f54a07aa1c00d4b95
@@ -278,12 +296,6 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: f64fd37da5cb89243ec68b5026d70bb8
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: InputField
-  - hash:
-      serializedVersion: 2
       Hash: 300fd99066f8c288e85f5e81ce65fe34
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -296,12 +308,6 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -312,12 +318,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
-  - hash:
-      serializedVersion: 2
-      Hash: 7072231382eb3c4871b3dd75ad0227e1
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
   - hash:
       serializedVersion: 2
       Hash: 5db75d920ffb77b623077e95eb9ecdb8
