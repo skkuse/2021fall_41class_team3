@@ -27,6 +27,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
     VRC.Udon.Editor.dll:
     - VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UI.GraphView.UdonGraphWindow
     - VRC.Udon.Editor.ProgramSources.UdonGraphProgram.UdonGraphProgramAsset
@@ -93,53 +94,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 18044}
+      Script: {instanceID: 18054}
     - Class: 114
-      Script: {instanceID: 18394}
+      Script: {instanceID: 18404}
     - Class: 114
-      Script: {instanceID: 18466}
+      Script: {instanceID: 18476}
     - Class: 114
-      Script: {instanceID: 19066}
+      Script: {instanceID: 19078}
     - Class: 114
-      Script: {instanceID: 19148}
+      Script: {instanceID: 19162}
     - Class: 114
-      Script: {instanceID: 19150}
-    - Class: 114
-      Script: {instanceID: 19152}
+      Script: {instanceID: 19164}
     - Class: 114
       Script: {instanceID: 19166}
     - Class: 114
-      Script: {instanceID: 19170}
-    - Class: 114
-      Script: {instanceID: 19172}
-    - Class: 114
-      Script: {instanceID: 19174}
-    - Class: 114
-      Script: {instanceID: 19176}
-    - Class: 114
       Script: {instanceID: 19180}
     - Class: 114
-      Script: {instanceID: 19222}
+      Script: {instanceID: 19184}
     - Class: 114
-      Script: {instanceID: 19794}
+      Script: {instanceID: 19186}
     - Class: 114
-      Script: {instanceID: 20118}
+      Script: {instanceID: 19188}
     - Class: 114
-      Script: {instanceID: 20154}
+      Script: {instanceID: 19190}
     - Class: 114
-      Script: {instanceID: 20480}
+      Script: {instanceID: 19194}
     - Class: 114
-      Script: {instanceID: 20540}
+      Script: {instanceID: 19236}
     - Class: 114
-      Script: {instanceID: 21042}
+      Script: {instanceID: 19808}
     - Class: 114
-      Script: {instanceID: 21164}
+      Script: {instanceID: 20132}
     - Class: 114
-      Script: {instanceID: 21916}
+      Script: {instanceID: 20168}
     - Class: 114
-      Script: {instanceID: 21980}
+      Script: {instanceID: 20494}
     - Class: 114
-      Script: {instanceID: 22046}
+      Script: {instanceID: 20556}
+    - Class: 114
+      Script: {instanceID: 21058}
+    - Class: 114
+      Script: {instanceID: 21180}
+    - Class: 114
+      Script: {instanceID: 21932}
+    - Class: 114
+      Script: {instanceID: 21966}
+    - Class: 114
+      Script: {instanceID: 21996}
+    - Class: 114
+      Script: {instanceID: 22062}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -305,6 +308,12 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
+      Hash: aa88ae22474df55295327e4ee99e5a24
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Toggle
+  - hash:
+      serializedVersion: 2
       Hash: 7072231382eb3c4871b3dd75ad0227e1
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -318,4 +327,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/main_scene.unity
-  playerPath: C:/Users/SH/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw
+  playerPath: C:/Users/SOSC4/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw
