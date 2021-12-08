@@ -135,10 +135,10 @@
         JUMP_INDIRECT, __0_intnl_returnTarget_UInt32
         
         
-         #  public void TurnOfsystemControlCV()
-    .export TurnOfsystemControlCV
+         #  public void TurnOffSystemControlCV()
+    .export TurnOffSystemControlCV
         
-    TurnOfsystemControlCV:
+    TurnOffSystemControlCV:
         
         PUSH, __0_const_intnl_SystemUInt32
         
