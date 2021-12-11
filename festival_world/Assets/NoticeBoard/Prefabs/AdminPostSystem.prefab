@@ -158,7 +158,7 @@ RectTransform:
   m_GameObject: {fileID: 2804431785077326640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 1}
   m_Children:
   - {fileID: 2804431786315298153}
   - {fileID: 2804431786415345844}
@@ -170,7 +170,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -1.74, y: -1.1}
-  m_SizeDelta: {x: 600, y: 200}
+  m_SizeDelta: {x: 480, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2804431785077326644
 Canvas:
@@ -436,7 +436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 268, y: 68}
+  m_AnchoredPosition: {x: 209, y: 73}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2804431785631616745
@@ -568,7 +568,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -46}
-  m_SizeDelta: {x: 500, y: 40}
+  m_SizeDelta: {x: 450, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2804431785672989199
 CanvasRenderer:
@@ -791,7 +791,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 39}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2804431786415345846
 CanvasRenderer:
@@ -2214,7 +2214,7 @@ PrefabInstance:
     - target: {fileID: 3773254932866642126, guid: 0a342aaa2bf022f4a93370c5b20a4ddf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4769309735552196575, guid: 0a342aaa2bf022f4a93370c5b20a4ddf,
         type: 3}
@@ -2236,7 +2236,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SendCustomEvent
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7936594049358154104, guid: 0a342aaa2bf022f4a93370c5b20a4ddf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4860179591855732701, guid: 0a342aaa2bf022f4a93370c5b20a4ddf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a342aaa2bf022f4a93370c5b20a4ddf, type: 3}
 --- !u!224 &7410811106539006392 stripped
 RectTransform:
