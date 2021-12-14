@@ -114,7 +114,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11540}
     - Class: 114
-      Script: {instanceID: 11552}
+      Script: {instanceID: 11542}
     - Class: 114
       Script: {instanceID: 11586}
     - Class: 114
@@ -224,16 +224,16 @@ ScriptsOnlyBuild:
     className: VRCAvatarPedestal
   - hash:
       serializedVersion: 2
-      Hash: 7072231382eb3c4871b3dd75ad0227e1
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 7072231382eb3c4871b3dd75ad0227e1
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -363,4 +363,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/main_scene.unity
-  playerPath: "C:/Users/\uC2E0\uC138\uB9B0/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw"
+  playerPath: C:/Users/SOSC4/AppData/Local/Temp/DefaultCompany/festival_world/scene-standalonewindows64-main_scene.vrcw

@@ -39,7 +39,7 @@ public class AdminSystem : UdonSharpBehaviour
         adminCheckCV.SetActive(false);
     }
 
-    public void TurnOfsystemControlCV()
+    public void TurnOffSystemControlCV()
     {
         systemControlCV.SetActive(false);
     }
