@@ -32,7 +32,7 @@ MonoBehaviour:
     nodes:
     - fullName: Variable_UnityEngineGameObject
       uid: b647219c-67e0-491a-9599-e4cb26b779e2
-      position: {x: -6234.8896, y: 377.00244}
+      position: {x: -10584.415, y: 497.29504}
       nodeUIDs:
       - 
       - 
@@ -117,7 +117,7 @@ MonoBehaviour:
     updateOrder: 0
   graphElementData: []
   viewTransform:
-    position: {x: -105, y: -66}
-    scale: 1
+    position: {x: 41.333332, y: 120}
+    scale: 0.49717674
   version: 1.0.0
   showAssembly: 0
