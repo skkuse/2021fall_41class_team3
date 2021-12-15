@@ -2211,6 +2211,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2111848927201097630, guid: 0a342aaa2bf022f4a93370c5b20a4ddf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TurnOffSystemControlCV
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434344386101030692, guid: 0a342aaa2bf022f4a93370c5b20a4ddf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TurnOffSystemControlCV
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246485210656981974, guid: 0a342aaa2bf022f4a93370c5b20a4ddf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TurnOffSystemControlCV
+      objectReference: {fileID: 0}
     - target: {fileID: 3773254932866642126, guid: 0a342aaa2bf022f4a93370c5b20a4ddf,
         type: 3}
       propertyPath: m_IsActive

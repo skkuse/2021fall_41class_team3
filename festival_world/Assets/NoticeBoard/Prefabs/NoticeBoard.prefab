@@ -479,6 +479,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7423274168285192673, guid: 32355106b4168954bafce942b50db6a2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TurnOffSystemControlCV
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32355106b4168954bafce942b50db6a2, type: 3}
 --- !u!4 &3796900437761385258 stripped
